@@ -12,3 +12,6 @@ puts "The Joker"
 puts "Joffrey Baratheon"
 puts "Norman Bates"
 puts "Bison the Puppy"
+print "Overall we have "
+print 12
+puts" great students"
