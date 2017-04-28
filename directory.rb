@@ -81,7 +81,36 @@ def print_footer(students)
   puts "Overall we have #{students.count} great #{@l}".center(100, '-')
 end
 
-students = input_students
-print_header
-print(students)
-print_footer(students)
+
+def interactive_menu
+  #print the menu asking the user what to do
+  students = []
+  loop do
+    puts "Student Directory - enter the number of the desired choice below"
+    puts "1. Input the students"
+    puts "2. Show the students"
+    puts "9. Exit"
+  # read the input and save to a variable
+  selection = gets.chomp
+    case selection
+      when "1"
+        #input the students
+        students = input_students
+      when "2"
+        #show the students
+        if students.length == 0
+          puts "No student records entered"
+        else
+          print_header
+          print(students)
+          print_footer(students)
+        end
+      when "9"
+        exit
+      else
+        puts "Invalid selection, please try again"
+    end
+  end
+end
+
+interactive_menu
